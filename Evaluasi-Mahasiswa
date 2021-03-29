@@ -1,0 +1,42 @@
+import  'package: pbo / manusia.dart' ;
+
+kelas  Mahasiswa  memperluas  Manusia {
+  String _nim, _nilai_huruf;
+  int _nilai_angka;
+
+  set  nilai_angka ( int nilai_angka) {
+    _nilai_angka = nilai_angka;
+  }
+
+  set  nim ( String nim) {
+    _nim = nim;
+  }
+
+  String  grade_nilai (nilai) {
+    if (nilai > =  85  && nilai <=  100 ) {
+      _nilai_huruf =  'A' ;
+    } lain  jika (nilai > =  75 ) {
+      _nilai_huruf =  'B +' ;
+    } lain  jika (nilai > =  65 ) {
+      _nilai_huruf =  'B' ;
+    } lain  jika (nilai > =  60 ) {
+      _nilai_huruf =  'C +' ;
+    } lain  jika (nilai > =  55 ) {
+      _nilai_huruf =  'C' ;
+    } lain  jika (nilai > =  40 ) {
+      _nilai_huruf =  'D' ;
+    } lain  jika (nilai > =  0 ) {
+      _nilai_huruf =  'E' ;
+    }
+    kembali _nilai_huruf;
+  }
+
+  Peta < String , dinamis >  toMap () {
+    kembali {
+      'nim' : _nim,
+      'nama' : nama,
+      'nilai_angka' : _nilai_angka,
+      'nilai_huruf' :  grade_nilai (_nilai_angka),
+    };
+  }
+}
